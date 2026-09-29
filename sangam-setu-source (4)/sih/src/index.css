@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { font-size: calc(16px * var(--fs, 1)); scroll-behavior: smooth; }
+body { @apply bg-paper font-sans text-ink antialiased; }
+:focus-visible { outline: 3px solid #F08A24; outline-offset: 2px; border-radius: 6px; }
+.tabular-nums { font-variant-numeric: tabular-nums; }
+
+/* High contrast mode */
+.hc body, .hc .bg-paper { background: #fff !important; }
+.hc .text-slate-500, .hc .text-slate-600, .hc .text-slate-400 { color: #1f2937 !important; }
+.hc .border-navy-100, .hc .border-navy-100\/80, .hc .border-navy-50 { border-color: #101E4A !important; }
+.hc .shadow-card { box-shadow: none !important; }
+.hc a, .hc button { text-decoration-thickness: 2px; }
+
+/* Low bandwidth: drop decorative layers */
+.lowbw .decor { display: none !important; }
+.lowbw * { transition: none !important; }
+
+.scan-line { background: linear-gradient(180deg, transparent, rgba(240,138,36,.55), transparent); }
+.dot-grid { background-image: radial-gradient(rgba(16,30,74,.10) 1px, transparent 1px); background-size: 18px 18px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
